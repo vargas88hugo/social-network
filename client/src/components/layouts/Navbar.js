@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <nav className="navbar bg-dark">
       <h1>
-        <Link to="/"><FontAwesomeIcon icon={faNetworkWired} /> Social Network</Link>
+        <Link to="/"><FontAwesomeIcon icon={ faNetworkWired } /> Social Network</Link>
       </h1>
       <ul>
         <li><Link to="#">Developers</Link></li>
