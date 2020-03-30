@@ -8,6 +8,7 @@ import Landing from './components/layouts/Landing';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import store from './store';
+import Alert from './components/layouts/Alert';
 
 const App = () => (
   <Provider store={store}>
@@ -16,6 +17,7 @@ const App = () => (
         <Navbar />
         <Route exact path="/" component={ Landing } />
         <section className="container">
+          <Alert />
           <Switch>
             <Route exact path="/register" component={ Register } />
             <Route exact path="/login" component={ Login } />
