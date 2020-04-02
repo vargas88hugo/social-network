@@ -11,7 +11,7 @@ import { faConnectdevelop } from '@fortawesome/free-brands-svg-icons';
 const Profiles = ({ getProfiles, profile: { profiles, loading }}) => {
   useEffect(() => {
     getProfiles();
-  }, []);
+  }, [getProfiles]);
   
   return (
     <Fragment>
