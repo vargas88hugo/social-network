@@ -3,11 +3,12 @@ import axios from 'axios';
 import { setAlert } from './alert';
 import {
   GET_PROFILE,
-  PROFILE_ERROR
+  PROFILE_ERROR,
+  UPDATE_PROFILE
 } from './types';
 
 /**
- * Function action that get the current progile with all the information
+ * Function action that get the current profile with all its information
  */
 export const getCurrentProfile = () => async dispatch => {
   try {
@@ -28,6 +29,12 @@ export const getCurrentProfile = () => async dispatch => {
   }
 }
 
+/**
+ * Function action that creates and edits the profile
+ * @param {*} formData 
+ * @param {*} history 
+ * @param {*} edit 
+ */
 export const createProfile = (formData, history, edit = false) => async dispatch => {
   try {
     const config = {
@@ -59,3 +66,72 @@ export const createProfile = (formData, history, edit = false) => async dispatch
     });
   }
 };
+
+/**
+ * 
+ * @param {*} formData 
+ * @param {*} history 
+ */
+export const addEducation = (formData, history) => async dispatch => {
+  try {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+
+    const res = await axios.put('/api/profile/education', formData, config);
+
+    dispatch({
+      type: UPDATE_PROFILE,
+      payload: res.data
+    });
+
+    dispatch(setAlert('Education Added', 'success'));
+
+    history.push('/dashboard');
+  } catch (err) {
+    const errors = err.response.data.errors;
+
+    if (errors) {
+      errors.forEach(error => dispatch(setAlert(error.msg, 'danger')));
+    }
+
+    dispatch({
+      type: PROFILE_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status }
+    });
+  }
+}
+
+export const addExperience = (formData, history) => async dispatch => {
+  try {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+
+    const res = await axios.put('/api/profile/experience', formData, config);
+
+    dispatch({
+      type: UPDATE_PROFILE,
+      payload: res.data
+    });
+
+    dispatch(setAlert('Experience Added', 'success'));
+
+    history.push('/dashboard');
+  } catch (err) {
+    const errors = err.response.data.errors;
+
+    if (errors) {
+      errors.forEach(error => dispatch(setAlert(error.msg, 'danger')));
+    }
+
+    dispatch({
+      type: PROFILE_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status }
+    });
+  }
+}

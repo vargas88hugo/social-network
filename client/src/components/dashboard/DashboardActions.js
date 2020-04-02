@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 import { faBlackTie } from '@fortawesome/free-brands-svg-icons';
-import { connect } from 'react-redux';
 
 export const DashboardActions = () => {
   return (
