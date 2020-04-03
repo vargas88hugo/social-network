@@ -1,8 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const request = require('request');
-const config = require('config');
 const { check, validationResult } = require('express-validator');
+
+// const config = require('config');
+const githubClientId = require('../../config/keys').githubClientId;
+const githubClientSecret = require('../../config/keys').githubClientSecret;
 
 const auth = require('../../middlewares/auth')
 const Profile = require('../../models/Profile');
@@ -341,7 +344,7 @@ router.delete('/experience/:exp_id', auth, async (req, res) => {
 router.get('/github/:username', (req, res) => {
   try {
     const options = {
-      uri: `https://api.github.com/users/${req.params.username}/repos?per_page=5&sort=created:asc&client_id=${config.get('githubClientId')}&client_secret=${config.get('githubClientSecret')}`,
+      uri: `https://api.github.com/users/${req.params.username}/repos?per_page=5&sort=created:asc&client_id=${githubClientId}&client_secret=${githubClientSecret}`,
       method: 'GET',
       headers: { 'user-agent': 'node.js' }
     };

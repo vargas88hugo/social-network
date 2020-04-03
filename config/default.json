@@ -1,6 +1,0 @@
-{
-  "mongoURI": ENV['MONGO_URI'],
-  "jwtSecret": ENV['MY_SECRET'],
-  "githubClientId": ENV['GH_BASIC_CLIENT_ID'],
-  "githubClientSecret": ENV['GH_BASIC_SECRET_ID']
-}
