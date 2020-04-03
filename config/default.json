@@ -1,6 +1,6 @@
 {
-  "mongoURI": "mongodb+srv://dbUser:password4856@network-54uz5.mongodb.net/test?retryWrites=true&w=majority",
-  "jwtSecret": "mysecrettoken",
-  "githubClientId": "055106f048dd918266c2",
-  "githubClientSecret": "ddf2f4523faeba9026f82e002c24926313b15367"
+  "mongoURI": ENV['MONGO_URI'],
+  "jwtSecret": ENV['MY_SECRET'],
+  "githubClientId": ENV['GH_BASIC_CLIENT_ID'],
+  "githubClientSecret": ENV['GH_BASIC_SECRET_ID']
 }
