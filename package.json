@@ -2,7 +2,7 @@
   "name": "social-network-app",
   "version": "1.0.0",
   "description": "server.js",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
