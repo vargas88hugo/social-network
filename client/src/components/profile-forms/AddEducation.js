@@ -1,9 +1,11 @@
 import React, { Fragment, useState } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { addEducation } from '../../actions/profile';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCodeBranch } from '@fortawesome/free-solid-svg-icons';
 
 const AddEducation = ({ addEducation, history }) => {
   const [formData, setFormData] = useState({
@@ -28,7 +30,8 @@ const AddEducation = ({ addEducation, history }) => {
        Add Your Education
       </h1>
       <p className="lead">
-        <i className="fas fa-code-branch"></i> Add any school or
+        <FontAwesomeIcon icon={ faCodeBranch } />{' '}
+        Add any school or
         bootcamp that you have attended
       </p>
       <small>* = required field</small>
@@ -110,7 +113,7 @@ const AddEducation = ({ addEducation, history }) => {
           ></textarea>
         </div>
         <input type="submit" className="btn btn-primary my-1" />
-        <a className="btn btn-light my-1" href="dashboard.html">Go Back</a>
+        <Link className="btn btn-light my-1" to="/dashboard">Go Back</Link>
       </form>
     </Fragment>
   )

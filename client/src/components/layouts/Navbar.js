@@ -29,7 +29,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
         </Link>
       </li>
       <li>
-        <Link to="#!" onClick={logout}>
+        <Link to="/dashboard" onClick={logout}>
           <FontAwesomeIcon icon={ faSignOutAlt } style={{ marginRight: "5px"}}/>
           <span className="hide-sm">Logout</span>
         </Link>

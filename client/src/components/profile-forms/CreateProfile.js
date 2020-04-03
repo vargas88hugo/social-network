@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 
 import { createProfile } from '../../actions/profile'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { faTwitter, faFacebook, faYoutube, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 const CreateProfile = ({ createProfile, history }) => {
@@ -55,8 +56,9 @@ const CreateProfile = ({ createProfile, history }) => {
       <h1 className="large text-primary">
         Create Your Profile
       </h1>
-      <p className="lead">
-        <i className="fas fa-user"></i> Let's get some information to make your
+      <p className="lead">}
+        <FontAwesomeIcon icon={ faUser } />
+        Let's get some information to make your
         profile stand out
       </p>
       <small>* = required field</small>

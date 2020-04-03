@@ -1,10 +1,11 @@
 import React, { useState, Fragment, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 import { createProfile, getCurrentProfile } from '../../actions/profile'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter, faFacebook, faYoutube, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 const EditProfile = ({
@@ -79,7 +80,8 @@ const EditProfile = ({
         Edit Your Profile
       </h1>
       <p className="lead">
-        <i className="fas fa-user"></i> Let's get some information to make your
+        <FontAwesomeIcon icon={ faUser } />{' '}
+        Let's get some information to make your
         profile stand out
       </p>
       <small>* = required field</small>
@@ -271,7 +273,7 @@ const EditProfile = ({
         </Fragment>}
 
         <input type="submit" className="btn btn-primary my-1" />
-        <a className="btn btn-light my-1" href="dashboard.html">Go Back</a>
+        <Link className="btn btn-light my-1" to="/dashboard">Go Back</Link>
       </form>
     </Fragment>
   )

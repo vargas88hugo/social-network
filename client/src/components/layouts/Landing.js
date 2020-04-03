@@ -2,20 +2,20 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types'
+import Spinner from './Spinner';
 
-const Landing = ({ isAuthenticated }) => {
+const Landing = ({ isAuthenticated, loading }) => {
   if (isAuthenticated) {
     return <Redirect to='/dashboard' />;
   }
 
-  return (
+  return loading === true && loading !== undefined ? <Spinner></Spinner> : (
     <section className="landing">
       <div className="dark-overlay">
         <div className="landing-inner">
           <h1 className="x-large">Social Network</h1>
           <p className="lead">
-            Create a developer profile/portfolio, share posts and get help from
-            other developers
+            Social Network for developers! Enjoy
           </p>
           <div className="buttons">
             <Link to="/register" className="btn btn-primary">Sign Up</Link>
@@ -29,10 +29,12 @@ const Landing = ({ isAuthenticated }) => {
 
 Landing.propTypes ={
   isAuthenticated: PropTypes.bool,
+  loading: PropTypes.bool
 };
 
 const mapStateToProps = state => ({
-  isAuthenticated: state.auth.isAuthenticated
+  isAuthenticated: state.auth.isAuthenticated,
+  loading: state.loading
 });
  
 export default connect(mapStateToProps)(Landing);
