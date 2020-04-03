@@ -12,7 +12,7 @@ import CommentItem from './CommentItem';
 const Post = ({ getPost, post: { post, loading }, match }) => {
   useEffect(() => {
     getPost(match.params.id);
-  }, [getPost, match.params.id]);
+  }, [getPost]);
   
   return loading || post === null ? <Spinner /> : <Fragment>
     <Link to="/posts" className="btn">
