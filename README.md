@@ -1,6 +1,6 @@
 # This is a social network for developers
 
-An application written in NodeJS and ReactJS with redux pattern. This project is based on a tutorial from Udemy and is highly recommended. I changes some features of the app such as icons and integrated them with ReactJS components 
+An application written in NodeJS, ReactJS with redux pattern and express. This project is based on a tutorial from Udemy and is highly recommended. This is a social network with authentication, posts publication, profile edition and likes. I changes some features of the app such as icons and integrated them with ReactJS components 
 ### Prerequisites
 
 Basically you need to have NodeJs and React in your computer
