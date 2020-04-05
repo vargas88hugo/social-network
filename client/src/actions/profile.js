@@ -47,6 +47,8 @@ export const getProfiles = () => async dispatch => {
       payload: res.data
     });
   } catch (err) {
+    console.log(err)
+
     dispatch({
       type: PROFILE_ERROR,
       payload: {
@@ -84,6 +86,10 @@ export const getProfileById = userId => async dispatch => {
  */
 export const getGithubRepos = username => async dispatch => {
   try {
+    if (username.includes('/')) {
+      throw "Error parse";
+    }
+
     const res = await axios.get(`/api/profile/github/${username}`);
 
     dispatch({
