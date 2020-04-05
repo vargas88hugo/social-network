@@ -7,25 +7,27 @@ import { logout } from '../../actions/auth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faNetworkWired } from '@fortawesome/free-solid-svg-icons';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faEdit, faUsers } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <ul>
       <li>
         <Link to='/profiles'>
-          Developers
+        <FontAwesomeIcon icon={ faUsers } style={{ marginRight: "5px" }} />
+        <span className="hide-sm">Developers</span>
         </Link>
       </li>
       <li>
         <Link to='/posts'>
-          Posts
+          <FontAwesomeIcon icon={ faEdit } style={{ marginRight: "5px" }} />
+          <span className="hide-sm">Posts</span>
         </Link>
       </li>
       <li>
         <Link to='/dashboard'>
            <FontAwesomeIcon icon={ faUser } style={{ marginRight: "5px" }} />
-           Dashboard
+           <span className="hide-sm">Dashboard</span>
         </Link>
       </li>
       <li>
