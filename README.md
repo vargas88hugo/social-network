@@ -20,5 +20,3 @@ Run in the root folder
 ```
 npm run dev
 ```
-### Udemy Course
-https://www.udemy.com/course/mern-stack-front-to-back/
